@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulir Transaksi Perpustakaan</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    header {
+      display: flex;s
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      padding: 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    .error {
+      color: red;
+      margin-top: 5px;
+    }
+    form {
+      max-width: 400px;
+    }
+    input, select {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="logo-perpustakaan.png" alt="Logo Perpustakaan" width="150">
+  <nav>
+    <ul>
+      <li><a href="beranda.html">Beranda</a></li>
+      <li><a href="transaksi.html">Transaksi</a></li>
+      <li><a href="profil.html">Profil</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+</header>
+
+<h2>Formulir Transaksi Perpustakaan</h2>
+
+<form id="transaksiForm">
+  <label for="nama">Nama Peminjam:</label>
+  <input type="text" id="nama" name="nama">
+
+  <label for="buku">Judul Buku:</label>
+  <input type="text" id="buku" name="buku">
+
+  <label for="tanggal">Tanggal Pinjam:</label>
+  <input type="date" id="tanggal" name="tanggal">
+
+  <button type="submit">Kirim</button>
+  <p id="errorMsg" class="error"></p>
+</form>
+
+<script>
+  // Ambil form dan elemen error
+  const form = document.getElementById('transaksiForm');
+  const errorMsg = document.getElementById('errorMsg');
+
+  form.addEventListener('submit', function(event) {
+    // Reset pesan error
+    errorMsg.textContent = '';
+
+    // Ambil nilai input
+    const nama = document.getElementById('nama').value.trim();
+    const buku = document.getElementById('buku').value.trim();
+    const tanggal = document.getElementById('tanggal').value;
+
+    // Cek apakah ada input yang kosong
+    if (nama === '' || buku === '' || tanggal === '') {
+      event.preventDefault(); // Mencegah form terkirim
+      errorMsg.textContent = 'Semua kolom harus diisi sebelum mengirim formulir!';
+    }
+  });
+</script>
+
+</body>
+</html>

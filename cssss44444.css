@@ -1,0 +1,259 @@
+/* =======================
+   Reset dasar & font
+======================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+/* =======================
+   Header & Navigasi
+======================= */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #e74c3c, #3498db); /* merah ke biru */
+    padding: 15px 30px;
+    color: #f1c40f;
+    flex-wrap: wrap; /* biar responsif */
+}
+header img {
+    height: 60px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* menyesuaikan jika layar kecil */
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f1c40f;
+}
+
+/* =======================
+   Main Content
+======================= */
+main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Hero / Beranda */
+.hero {
+    text-align: center;
+    background-color: #3498db; /* biru */
+    color: white;
+    padding: 50px 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+/* Section Profil / Layanan */
+section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+section h2 {
+    color: #e74c3c; /* merah */
+    margin-bottom: 15px;
+}
+
+section p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+section ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+/* =======================
+   Form Transaksi & Login
+======================= */
+form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+form input, form select {
+    width: 100%;
+    max-width: 400px;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #e74c3c; /* merah */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #c0392b;
+}
+
+form a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #3498db; /* biru */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+form a:hover {
+    text-decoration: underline;
+}
+
+/* =======================
+   Tabel Transaksi
+======================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #e74c3c; /* merah */
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1c40f;
+    color: white;
+}
+
+/* =======================
+   Footer
+======================= */
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background: linear-gradient(to right, #e74c3c, #3498db);
+    color: white;
+    margin-top: 30px;
+}
+
+/* =======================
+   Responsif / Media Query
+======================= */
+@media (max-width: 992px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    header img {
+        height: 50px;
+        margin-bottom: 10px;
+    }
+
+    main {
+        padding: 0 15px;
+    }
+
+    form input, form select, form button {
+        width: 100%;
+    }
+
+    table th, table td {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    footer {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+}
